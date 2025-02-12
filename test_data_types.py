@@ -84,8 +84,17 @@ def test_dicts():
     first = ["a", "b", "c", "d", "e"]
     second = [1, 2, 3, 4, 5]
     # TODO создайте словарь
-    d = {}
 
+    # Создаем словарь с помощью zip
+    d = dict(zip(first, second))
+    print("Созданный словарь:", d)
+
+    # Создаем пустой словарь
+    d = {}
+    # Заполняем словарь
+    for i in range(len(first)):
+        d[first[i]] = second[i]
+    print("Созданный словарь:", d)
     assert isinstance(d, dict)
     assert len(d) == 5
     assert list(d.keys()) == first
